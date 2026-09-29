@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import logo from "../../assets/logo.png"
 
@@ -25,19 +26,19 @@ const Navbar = () => {
                 <div className="navbar-center hidden md:flex">
                     <div className="flex items-center space-x-2 bg-[#121614] px-3 py-1.5 rounded-full border border-gray-800">
 
-                        <a
-                            href="#workouts"
+                        <Link
+                            href="/"
                             className="px-4 py-1.5 rounded-full text-gray-400 hover:text-white text-sm font-medium"
                         >
                             Workouts
-                        </a>
+                        </Link>
 
-                        <a
-                            href="#myplan"
+                        <Link
+                            href="/plan"
                             className="px-4 py-1.5 rounded-full text-gray-400 hover:text-white text-sm font-medium"
                         >
-                            My Plan
-                        </a>
+                            My Plane
+                        </Link>
 
                     </div>
                 </div>
