@@ -1,3 +1,5 @@
+import PlaneButton from '@/components/button/PlaneButton';
+import SaveButton from '@/components/button/SaveButton';
 import React from 'react';
 
 const getData = async () => {
@@ -142,13 +144,9 @@ const CardDetailes = async ({ params }) => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
 
-        <button className="btn btn-primary flex-1 font-bold">
-          Add to today&apos;s plan
-        </button>
+        <PlaneButton data={data} ></PlaneButton>
 
-        <button className="btn btn-base-200 border-base-300 flex-1 font-bold">
-          Save for later
-        </button>
+       <SaveButton data={data} ></SaveButton>
 
       </div>
 
