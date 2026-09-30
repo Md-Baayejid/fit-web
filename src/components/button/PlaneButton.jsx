@@ -8,18 +8,23 @@ const PlaneButton = ({data}) => {
         
     const {planeCard, setPlaneCard} = useContext(CardContext)
 
+    const isSaved = planeCard?.some((item) => item.id === data.id);
+
     const handleClick = () =>{
+
+        if (isSaved) return;
         setPlaneCard([...planeCard, data]);
 
-
-    console.log("Selected Card:", data);
-    console.log("Today's Plan:", [...planeCard, data]);
     }
 
     return (
         <div>
-            <button onClick={() => handleClick()} className="btn btn-primary flex-1 font-bold">
-          Add to today&apos;s plan
+            <button 
+            onClick={() => handleClick()}
+            disabled={isSaved}
+             className="btn btn-primary flex-1 font-bold">
+                {isSaved ? "Added ✓" : "Add to today's plan"}
+          
         </button>
         </div>
     );

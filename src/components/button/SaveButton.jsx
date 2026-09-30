@@ -1,24 +1,31 @@
-"use client"
+"use client";
 
-import { CardContext } from '@/context/CardProvider';
-import React, { useContext } from 'react';
+import { CardContext } from "@/context/CardProvider";
+import React, { useContext } from "react";
 
-const SaveButton = ({data}) => {
+const SaveButton = ({ data }) => {
+    const { saveCard, setsaveCard } = useContext(CardContext);
 
-    const {saveCard, setsaveCard} = useContext(CardContext);
+    const isSaved = saveCard?.some((item) => item.id === data.id);
 
-    const handleClick = () =>{
-        setsaveCard([...saveCard, data]);
+    const handleClick = () => {
+        if (isSaved) return;
 
+        const updatedCards = [...saveCard, data];
 
-    console.log("Selected Card:", data);
-    console.log("Today's Plan:", [...saveCard, data]);
-    }
+        setsaveCard(updatedCards);
+
+        
+    };
 
     return (
         <div>
-            <button onClick={()=> handleClick()} className="btn btn-base-200 border-base-300 flex-1 font-bold">
-                Save for later
+            <button
+                onClick={()=>handleClick()}
+                disabled={isSaved}
+                className="btn btn-base-200 border-base-300 flex-1 font-bold"
+            >
+                {isSaved ? "Saved ✓" : "Save for later"}
             </button>
         </div>
     );

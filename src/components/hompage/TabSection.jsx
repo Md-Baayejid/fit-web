@@ -27,7 +27,7 @@ const TabSection = () => {
                                 : "text-base-content/60"
                         }`}
                     >
-                        Today's Plan
+                        Today&apos;s Plan
                     </button>
 
                     <button
