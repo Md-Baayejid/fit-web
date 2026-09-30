@@ -24,7 +24,7 @@ const page = () => {
                         Exercises
                     </span>
                     <span className="text-4xl md:text-5xl font-black text-primary">
-                        2
+                        0
                     </span>
                 </div>
 
@@ -34,7 +34,7 @@ const page = () => {
                         Minutes
                     </span>
                     <span className="text-4xl md:text-5xl font-black text-base-content">
-                        23
+                        0
                     </span>
                 </div>
 
@@ -44,7 +44,7 @@ const page = () => {
                         Calories
                     </span>
                     <span className="text-4xl md:text-5xl font-black text-base-content">
-                        190
+                        0
                     </span>
                 </div>
 
