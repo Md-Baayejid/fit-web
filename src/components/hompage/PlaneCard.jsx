@@ -3,6 +3,7 @@
 import React, { useContext, useState } from "react";
 import { CardContext } from "@/context/CardProvider";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const PlaneCard = ({ item }) => {
 
@@ -18,8 +19,7 @@ const PlaneCard = ({ item }) => {
 
         setPlaneCard(updatedCards);
 
-        console.log("Deleted Card:", item);
-        console.log("Remaining Plans:", updatedCards);
+        toast.error("Delet from plane")
     };
 
     // Mark as done

@@ -3,6 +3,7 @@
 import React, { useContext } from "react";
 import { CardContext } from "@/context/CardProvider";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const SaveCard = ({ item }) => {
     const { saveCard, setsaveCard } = useContext(CardContext);
@@ -13,6 +14,7 @@ const SaveCard = ({ item }) => {
         );
 
         setsaveCard(updatedCards);
+        toast.error("Delet from saved")
     };
 
     return (

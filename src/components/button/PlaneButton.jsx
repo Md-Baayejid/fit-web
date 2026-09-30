@@ -3,6 +3,7 @@
 
 import { CardContext } from '@/context/CardProvider';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const PlaneButton = ({data}) => {
         
@@ -13,6 +14,7 @@ const PlaneButton = ({data}) => {
     const handleClick = () =>{
 
         if (isSaved) return;
+        toast.success('Added to the plane')
         setPlaneCard([...planeCard, data]);
 
     }

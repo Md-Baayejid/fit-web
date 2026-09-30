@@ -2,6 +2,7 @@
 
 import { CardContext } from "@/context/CardProvider";
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
 const SaveButton = ({ data }) => {
     const { saveCard, setsaveCard } = useContext(CardContext);
@@ -11,17 +12,18 @@ const SaveButton = ({ data }) => {
     const handleClick = () => {
         if (isSaved) return;
 
+
         const updatedCards = [...saveCard, data];
 
         setsaveCard(updatedCards);
+        toast.success('Saved')
 
-        
     };
 
     return (
         <div>
             <button
-                onClick={()=>handleClick()}
+                onClick={() => handleClick()}
                 disabled={isSaved}
                 className="btn btn-base-200 border-base-300 flex-1 font-bold"
             >
