@@ -6,7 +6,7 @@ import React, { useContext } from 'react';
 
 const PlaneButton = ({data}) => {
         
-    const {planeCard, setPlaneCard} = useContext(CardContext)
+    const {planeCard, setPlaneCard, planeCount , setPlaneCount} = useContext(CardContext)
 
     const isSaved = planeCard?.some((item) => item.id === data.id);
 

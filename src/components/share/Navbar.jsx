@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../../assets/logo.png"
+import ButtonForLarg from "./ButtonForLarg";
 
 const Navbar = () => {
     return (
@@ -46,21 +47,7 @@ const Navbar = () => {
                 {/* Desktop Right */}
                 <div className="navbar-end hidden md:flex gap-6">
 
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                        <span>Plan</span>
-
-                        <span className="w-6 h-6 flex items-center justify-center bg-[#a3e635] text-black font-bold rounded-full text-xs">
-                            0
-                        </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                        <span>Saved</span>
-
-                        <span className="w-6 h-6 flex items-center justify-center border border-gray-600 rounded-full text-xs">
-                            0
-                        </span>
-                    </div>
+                    <ButtonForLarg></ButtonForLarg>
 
                 </div>
 
@@ -85,36 +72,36 @@ const Navbar = () => {
                         >
 
                             <li>
-                                <a
-                                    href="#workouts"
+                                <Link 
+                                    href="/"
                                     className="text-[#a3e635]"
                                 >
                                     Workouts
-                                </a>
+                                </Link >
                             </li>
 
                             <li>
-                                <a href="#myplan">
+                                <Link  href="/plan">
                                     My Plan
-                                </a>
+                                </Link >
                             </li>
 
                             <li>
-                                <a>
+                                <Link href="/plan" >
                                     Plan
                                     <span className="badge bg-[#a3e635] text-black border-none">
                                         0
                                     </span>
-                                </a>
+                                </Link >
                             </li>
 
                             <li>
-                                <a>
+                                <Link href="/plan" >
                                     Saved
                                     <span className="badge badge-outline">
                                         0
                                     </span>
-                                </a>
+                                </Link >
                             </li>
 
                         </ul>

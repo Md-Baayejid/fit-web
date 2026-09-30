@@ -7,9 +7,11 @@ const CardProvider = ({children}) => {
 
     const [planeCard, setPlaneCard] = useState([]);
     const [saveCard, setsaveCard] = useState([]);
-
+    
+    const planeCount = planeCard.length;
+    const saveCount = saveCard.length
     const shareData = {
-        planeCard, setPlaneCard, saveCard, setsaveCard
+        planeCard, setPlaneCard, saveCard, setsaveCard, planeCount, saveCount 
     }
 
     return (
